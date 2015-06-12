@@ -53,7 +53,7 @@ require(['jquery'], function($) {
         $('#addCriteria').parent().attr('style', 'background-color: white');
         
         // create the removeCritera button
-        $('input[name="value"]').after('<button class="removeButton" style="margin: 0 5px">X</button>');
+        $('input[name="value"]').after('<button class="removeButton" style="margin: 0 5px"><img src="/images/img/icon-delete.svg" width="10" height="10"></button>');
         $('fieldset.inline').on('click', '.removeButton', removeCriteria);
         
     });
