@@ -14,7 +14,7 @@ require(['jquery'], function($) {
             fieldSelect = newCriteria.children().first().children();
             
             re = /fieldnum_(\d+)/;
-            newIdNumber = parseInt(re.exec(newCriteria.children().first().children().attr('name'))[1]) + 1;
+            newIdNumber = parseInt(re.exec(fieldSelect.attr('name'))[1]) + 1;
             fieldSelect.attr('name', 'fieldnum_' + newIdNumber);
             fieldSelect.attr('onchange', 'set_comp(this, this.form.comparator' + newIdNumber + ')');
             
