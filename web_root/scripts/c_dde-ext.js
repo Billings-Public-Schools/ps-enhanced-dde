@@ -2,6 +2,9 @@ require(['jquery'], function($) {
     $(function() {
         'use strict';
         
+        // get a template of the criteria
+        var template = $('select[name^="fieldnum_"]').parent().parent().last();
+        
         var renumberCriteria = function() {
             // get all the criteria divs
             var criteria = $('select[name^="fieldnum_"]').parent().parent();
@@ -25,17 +28,11 @@ require(['jquery'], function($) {
             // prevent submitting the form
             e.preventDefault();
             
-            var lastCriteria,
-                newCriteria;
-            
-            lastCriteria = $('select[name^="fieldnum_"]').parent().parent().last();
-            newCriteria = lastCriteria.clone();
-            
-            // clear out any values left over
-            newCriteria.children().children().val('');
+            // clone our template
+            var newCriteria = template.clone();
             
             // add the new critera to the page
-            lastCriteria.after(newCriteria);
+            $('fieldset div').last().before(newCriteria)
             
             renumberCriteria();
         };
