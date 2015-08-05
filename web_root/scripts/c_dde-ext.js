@@ -30,6 +30,7 @@ require(['jquery'], function($) {
             
             // clone our template
             var newCriteria = template.clone();
+            $(newCriteria).children().last().children().first().val('')
             
             // add the new critera to the page
             $('fieldset div').last().before(newCriteria)
